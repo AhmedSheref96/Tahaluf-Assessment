@@ -1,0 +1,70 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 4,
+    "identityHash": "fd8d1894ff4e9995941251bd4d3ac311",
+    "entities": [
+      {
+        "tableName": "UniversityEntity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `country` TEXT, `webPages` TEXT, `name` TEXT, `domains` TEXT, `stateProvince` TEXT, `alphaTwoCode` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "country",
+            "columnName": "country",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "webPages",
+            "columnName": "webPages",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "domains",
+            "columnName": "domains",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "stateProvince",
+            "columnName": "stateProvince",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "alphaTwoCode",
+            "columnName": "alphaTwoCode",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fd8d1894ff4e9995941251bd4d3ac311')"
+    ]
+  }
+}

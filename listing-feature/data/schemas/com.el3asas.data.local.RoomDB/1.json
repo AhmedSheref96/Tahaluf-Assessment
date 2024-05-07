@@ -1,0 +1,62 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "ff3454dc72b376c970ad3c5679d326ba",
+    "entities": [
+      {
+        "tableName": "UniversityEntity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`country` TEXT, `webPages` TEXT, `name` TEXT, `domains` TEXT, `stateProvince` TEXT, `alphaTwoCode` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "country",
+            "columnName": "country",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "webPages",
+            "columnName": "webPages",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "domains",
+            "columnName": "domains",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "stateProvince",
+            "columnName": "stateProvince",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "alphaTwoCode",
+            "columnName": "alphaTwoCode",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": []
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ff3454dc72b376c970ad3c5679d326ba')"
+    ]
+  }
+}

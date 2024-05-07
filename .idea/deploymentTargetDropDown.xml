@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="deploymentTargetDropDown">
+    <value>
+      <entry key="app">
+        <State />
+      </entry>
+      <entry key="details-feature.ui">
+        <State />
+      </entry>
+      <entry key="details-fetaus.ui">
+        <State />
+      </entry>
+      <entry key="listing-feat.listing-ui">
+        <State />
+      </entry>
+      <entry key="listing-feature">
+        <State />
+      </entry>
+      <entry key="listing-feature.presentation">
+        <State />
+      </entry>
+      <entry key="listing-feature.ui">
+        <State />
+      </entry>
+    </value>
+  </component>
+</project>
