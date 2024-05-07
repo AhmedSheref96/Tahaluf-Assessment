@@ -10,7 +10,7 @@ import com.el3asas.data.local.enities.UniversityEntity
 interface UniversitiesDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertAll(universityEntity: UniversityEntity)
+    suspend fun insertAll(universityEntity: List<UniversityEntity>)
 
     @Query("delete from universityentity")
     suspend fun deleteAll()

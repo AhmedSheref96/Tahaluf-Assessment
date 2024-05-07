@@ -7,7 +7,7 @@ import com.el3asas.domain.models.UniversityItem
 @Entity
 data class UniversityEntity(
     @PrimaryKey(autoGenerate = true)
-    val id:Int?=null,
+    val id: Int? = null,
     val country: String? = null,
     val webPages: List<String?>? = null,
     val name: String? = null,
@@ -25,4 +25,16 @@ data class UniversityEntity(
             alphaTwoCode
         )
     }
+}
+
+fun UniversityItem.toEntity() = run {
+    UniversityEntity(
+        null,
+        country,
+        webPages,
+        name,
+        domains,
+        stateProvince,
+        alphaTwoCode
+    )
 }

@@ -9,9 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/listing-feat" />
-            <option value="$PROJECT_DIR$/listing-feat/listing-ui" />
+            <option value="$PROJECT_DIR$/details-feature" />
+            <option value="$PROJECT_DIR$/details-feature/ui" />
             <option value="$PROJECT_DIR$/listing-feature" />
             <option value="$PROJECT_DIR$/listing-feature/data" />
             <option value="$PROJECT_DIR$/listing-feature/domain" />
