@@ -6,16 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.el3asas.domain.models.UniversityItem
 import com.el3asas.listing_ui.R
 import com.el3asas.listing_ui.databinding.FragmentListUniversitiesBinding
+import com.el3asas.ui.navUnits.getNavigationResult
+import com.el3asas.ui.navUnits.getNavigationResultLiveData
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @AndroidEntryPoint
 class ListUniversitiesFragment : Fragment(), UniversitiesAdapter.ItemClickListener {
@@ -46,6 +50,10 @@ class ListUniversitiesFragment : Fragment(), UniversitiesAdapter.ItemClickListen
                 universitiesAdapter.dataList = it
             }
         }
+        getNavigationResultLiveData<Boolean>()?.observe(viewLifecycleOwner) { isRefresh ->
+            if (isRefresh) viewModel.loadUniversities()
+        }
+
     }
 
     override fun onItemClicked(item: UniversityItem) {

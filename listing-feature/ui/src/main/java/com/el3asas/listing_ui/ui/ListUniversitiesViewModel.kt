@@ -19,6 +19,10 @@ class ListUniversitiesViewModel @Inject constructor(
     val universitiesList = _universitiesList.asStateFlow()
 
     init {
+        loadUniversities()
+    }
+
+    fun loadUniversities() {
         viewModelScope.launch {
             _universitiesList.value = getUniversities("United Arab Emirates")
         }
