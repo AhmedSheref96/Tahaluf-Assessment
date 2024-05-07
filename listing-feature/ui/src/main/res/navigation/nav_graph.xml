@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/listUniversitiesFragment">
+
+    <fragment
+        android:id="@+id/listUniversitiesFragment"
+        android:name="com.el3asas.listing_ui.ui.ListUniversitiesFragment"
+        tools:layout="@layout/fragment_list_universities">
+        <action
+            android:id="@+id/action_listUniversitiesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.el3asas.ui.UniversityDetailsFragment"
+        tools:layout="@layout/fragment_university_details">
+        <argument
+            android:name="item"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+
+</navigation>

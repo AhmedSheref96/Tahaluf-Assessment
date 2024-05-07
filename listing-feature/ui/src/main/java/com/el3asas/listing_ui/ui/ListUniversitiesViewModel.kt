@@ -1,4 +1,4 @@
-package com.el3asas.listing_ui
+package com.el3asas.listing_ui.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

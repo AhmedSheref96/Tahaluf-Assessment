@@ -22,13 +22,5 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        val fragmentManager: FragmentManager = supportFragmentManager
-        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-
-        val fragment = ListUniversitiesFragment()
-        fragmentTransaction.replace(R.id.frameLayout, fragment)
-
-        fragmentTransaction.commit()
     }
 }

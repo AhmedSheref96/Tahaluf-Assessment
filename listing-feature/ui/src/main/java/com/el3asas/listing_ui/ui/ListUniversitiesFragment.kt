@@ -1,6 +1,5 @@
-package com.el3asas.listing_ui
+package com.el3asas.listing_ui.ui
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,15 +8,10 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavGraphNavigator
-import androidx.navigation.NavOptions
-import androidx.navigation.Navigator
-import androidx.navigation.NavigatorProvider
 import androidx.navigation.fragment.findNavController
 import com.el3asas.domain.models.UniversityItem
+import com.el3asas.listing_ui.R
 import com.el3asas.listing_ui.databinding.FragmentListUniversitiesBinding
-import com.el3asas.ui.MainActivity
-import com.el3asas.ui.UniversityDetailsFragment
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -55,9 +49,12 @@ class ListUniversitiesFragment : Fragment(), UniversitiesAdapter.ItemClickListen
     }
 
     override fun onItemClicked(item: UniversityItem) {
-        requireActivity().startActivity(Intent(requireContext(), MainActivity::class.java).apply {
-            this.putExtra("item", bundleOf("item" to Gson().toJson(item)))
-        })
+//        requireActivity().startActivity(Intent(requireContext(), MainActivity::class.java).apply {
+//            this.putExtra("item", bundleOf("item" to Gson().toJson(item)))
+//        })
+
+        val data = Gson().toJson(item)
+        findNavController().navigate(R.id.detailsFragment, bundleOf("item" to data))
     }
 
 }

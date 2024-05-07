@@ -1,4 +1,4 @@
-package com.el3asas.listing_ui
+package com.el3asas.listing_ui.ui
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
