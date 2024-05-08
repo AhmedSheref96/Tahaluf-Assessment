@@ -51,4 +51,6 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.ksp.api)
     implementation(libs.ksp.gradlePlugin)
+    implementation(libs.gson)
+
 }
