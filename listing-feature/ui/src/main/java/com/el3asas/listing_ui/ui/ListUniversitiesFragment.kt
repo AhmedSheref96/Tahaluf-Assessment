@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -17,6 +18,7 @@ import com.el3asas.ui.navUnits.getNavigationResult
 import com.el3asas.ui.navUnits.getNavigationResultLiveData
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -52,6 +54,15 @@ class ListUniversitiesFragment : Fragment(), UniversitiesAdapter.ItemClickListen
         }
         getNavigationResultLiveData<Boolean>()?.observe(viewLifecycleOwner) { isRefresh ->
             if (isRefresh) viewModel.loadUniversities()
+        }
+
+        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            binding.refreshLayout.isRefreshing = isLoading
+            binding.recyclerView.isVisible = isLoading.not()
+        }
+
+        binding.refreshLayout.setOnRefreshListener {
+            viewModel.loadUniversities()
         }
 
     }
