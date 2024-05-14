@@ -2,6 +2,7 @@ package com.el3asas.listing_ui.ui
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -37,12 +38,12 @@ class UniversitiesAdapter(private val listener: ItemClickListener) :
             country.text = item.name
             name.text = item.name
             root.setOnClickListener {
-                listener.onItemClicked(item)
+                listener.onItemClicked(it,item)
             }
         }
     }
 
     interface ItemClickListener {
-        fun onItemClicked(item: UniversityItem)
+        fun onItemClicked(view: View, item: UniversityItem)
     }
 }

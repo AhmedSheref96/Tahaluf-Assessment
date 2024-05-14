@@ -1,19 +1,18 @@
 package com.el3asas.ui
 
 import android.annotation.SuppressLint
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.el3asas.ui.models.UniversityItem
 import com.el3asas.ui.databinding.FragmentUniversityDetailsBinding
-import com.el3asas.ui.navUnits.setNavigationResult
+import com.el3asas.ui.models.UniversityItem
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -56,7 +55,7 @@ class UniversityDetailsFragment : Fragment() {
                     pageLink.isVisible = false
                 }
                 refreshBtn.setOnClickListener {
-                    setNavigationResult(true)
+                    setFragmentResult("result", bundleOf("result" to true))
                     findNavController().navigateUp()
                 }
             }

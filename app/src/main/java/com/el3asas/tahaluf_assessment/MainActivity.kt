@@ -1,13 +1,10 @@
-package com.el3asas.listing_ui
+package com.el3asas.tahaluf_assessment
 
 import android.os.Bundle
-import android.widget.FrameLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import dagger.hilt.android.AndroidEntryPoint
 
 
